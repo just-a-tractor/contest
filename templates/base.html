@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>{{title}}</title>
+</head>
+  <body>
+    <header>
+      <nav class="navbar navbar-light bg-light">
+       <a class="navbar-brand" href="/registration">Зарегистрироваться</a>
+       {% if "username" in session %}
+         <a class="navbar-brand" href="/logout">{{session['username']}}</a>
+       {% endif %}
+        <a class="navbar-brand" href="#">Наше приложение</a>
+</nav>
+    </header>
+    <!-- Begin page content -->
+    <main role="main" class="container">
+        {% block content %}{% endblock %}
+    </main>
+  </body>
+</html>           

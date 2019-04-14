@@ -1,0 +1,18 @@
+{% extends "base1.html" %}
+{% block content %}
+
+{% for user in users %}
+ {% if user[1] != "Admin" %}
+    <div class="alert alert-dark" role="alert">
+            {% if user[3] != 0 %}
+            <h2> <a href="/main_admin/{{user[0]}}">{{user[1]}}</a></h2>
+            {% else %}         
+            <h2>{{user[1]}}</h2>
+            {% endif %}
+            <div>Посылок: {{user[3]}}</div>
+
+    </div>
+ {% endif %}
+{% endfor %}
+
+{% endblock %}

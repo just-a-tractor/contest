@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href="/add_news">Добавить новость</a><br>
+<a href="/main?p=1">Сортировка</a>
+{% for item in news %}
+    <div class="alert alert-dark" role="alert">
+        <h2>{{item[1]}}</h2>
+        <div>{{item[2]}}</div>
+        <a href="/delete_news/{{item[0]}}">Удалить новость</a>
+    </div>
+{% endfor %}
+<nav class="navbar navbar-light bg-light">
+ <a class="navbar-brand" href="#">Возможности Админа:</a>
+ <a class="navbar-brand" href="/super_page">Все пользователи</a>              
+</nav>
+
+{% endblock %}

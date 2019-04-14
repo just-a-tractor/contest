@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for user in users %}
+ {% if user[1] != "Admin" %}
+    <div class="alert alert-dark" role="alert">
+            <h2>{{user[1]}}</h2>
+             <div>Написал статей: {{user[3]}}</div>
+
+    </div>
+ {% endif %}
+{% endfor %}
+
+{% endblock %}
