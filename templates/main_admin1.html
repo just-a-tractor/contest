@@ -1,0 +1,46 @@
+{% extends "base1.html" %}
+{% block content %}
+
+<style>
+   .b1 {
+    background: red;
+    color: white; /* Белые буквы */
+    font-size: 17pt; /* Размер шрифта в пунктах */
+   }
+
+   .b2 {
+    background: gold;
+    color: white; /* Белые буквы */
+    font-size: 17pt; /* Размер шрифта в пунктах */
+   }
+
+   .b3 {
+    background: green;
+    color: white; /* Белые буквы */
+    font-size: 17pt; /* Размер шрифта в пунктах */
+   }
+
+  </style>
+
+<a href="/main_admin/{{user}}?p=1">Сортировка</a>
+{% for item in news %}
+    <div class="alert alert-dark" role="alert">
+
+        <h2>{{item[1]}}
+         <font color=red>{{item[4]}}</font>
+
+        <button class="b2" onclick="location.href='/change/{{item[0]}}/На проверке/{{item[3]}}';">На прoверке</button>
+        <button class="b1" onclick="location.href='/change/{{item[0]}}/На доработке/{{item[3]}}';">На доработке</button>
+        <button class="b3" onclick="location.href='/change/{{item[0]}}/Зачтено/{{item[3]}}';">Зачтено</button>
+
+        </h2>
+
+        <div>{{item[2]}}</div>
+    </div>
+{% endfor %}
+<nav class="navbar navbar-light bg-light">
+ <a class="navbar-brand" href="#">Возможности Админа:</a>
+ <a class="navbar-brand" href="/super_page">Все пользователи</a>
+</nav>
+
+{% endblock %}
