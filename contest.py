@@ -24,7 +24,7 @@ class AddNewsForm(FlaskForm):
 
 class DB:
     def __init__(self):
-        conn = sqlite3.connect("C:/sqlite/databases/mydb1.db", check_same_thread=False)
+        conn = sqlite3.connect("sqlite/databases/mydb1.db", check_same_thread=False)
         self.conn = conn
 
     def get_connection(self):
